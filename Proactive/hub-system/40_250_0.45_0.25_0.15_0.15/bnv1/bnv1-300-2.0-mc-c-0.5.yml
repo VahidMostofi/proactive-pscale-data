@@ -1,0 +1,1480 @@
+name: bnv1-300-2.0-mc-c-0.5
+workload: 40_250_0.45_0.25_0.15_0.15
+steps:
+- info:
+    serviceb:
+      start: 1607857709920869
+      end: 1607857859921077
+      cpuUsageMean: 99.7676124274694
+      cpuUsage70th: 100.87273739462742
+      cpuUsage75th: 101.33918727705145
+      cpuUsage80th: 101.69665895305238
+      cpuUsage85th: 102.19454372996807
+      cpuUsage90th: 102.5209256347354
+      cpuUsage95th: 102.87236579213425
+      cpuUsage99th: 103.78843284475735
+      numberOfCores: 0.5
+      replicaCount: 1
+      responseTimes:
+        req1:
+          service_time:
+            count: 1610
+            responseTimesMean: 52.267080745341616
+            responseTimes95th: 87
+        req2:
+          service_time:
+            count: 897
+            responseTimesMean: 53.87402452619844
+            responseTimes95th: 89.5
+        req3: {}
+        req4: {}
+    servicec:
+      start: 1607857709920869
+      end: 1607857859921077
+      cpuUsageMean: 42.31103060351165
+      cpuUsage70th: 48.08233009644734
+      cpuUsage75th: 49.120816350739645
+      cpuUsage80th: 50.9252579423522
+      cpuUsage85th: 54.0090133311777
+      cpuUsage90th: 57.38272304185678
+      cpuUsage95th: 61.24594321762997
+      cpuUsage99th: 69.65386215589182
+      numberOfCores: 0.5
+      replicaCount: 1
+      responseTimes:
+        req1: {}
+        req2: {}
+        req3:
+          service_time:
+            count: 537
+            responseTimesMean: 28.141527001862197
+            responseTimes95th: 72.5
+        req4:
+          service_time:
+            count: 534
+            responseTimesMean: 30.363295880149813
+            responseTimes95th: 75.5
+    serviced:
+      start: 1607857709920869
+      end: 1607857859921077
+      cpuUsageMean: 86.35873979245943
+      cpuUsage70th: 91.34850099879682
+      cpuUsage75th: 92.53592151129477
+      cpuUsage80th: 94.92896648834167
+      cpuUsage85th: 96.51780913551269
+      cpuUsage90th: 97.26777299870562
+      cpuUsage95th: 98.75480550755728
+      cpuUsage99th: 101.15158348874888
+      numberOfCores: 0.5
+      replicaCount: 1
+      responseTimes:
+        req1:
+          service_time:
+            count: 1610
+            responseTimesMean: 22.193788819875778
+            responseTimes95th: 70
+        req2:
+          service_time:
+            count: 897
+            responseTimesMean: 15.189520624303233
+            responseTimes95th: 63
+        req3:
+          service_time:
+            count: 537
+            responseTimesMean: 17.033519553072626
+            responseTimes95th: 65
+        req4:
+          service_time:
+            count: 534
+            responseTimesMean: 41.646067415730336
+            responseTimes95th: 85
+    servicee:
+      start: 1607857709920869
+      end: 1607857859921077
+      cpuUsageMean: 54.23977175613118
+      cpuUsage70th: 58.944843007917996
+      cpuUsage75th: 60.52362377181362
+      cpuUsage80th: 62.451591226462526
+      cpuUsage85th: 64.46486177495908
+      cpuUsage90th: 68.21748513143032
+      cpuUsage95th: 73.51542142351794
+      cpuUsage99th: 78.22574890948593
+      numberOfCores: 0.5
+      replicaCount: 1
+      responseTimes:
+        req1:
+          service_time:
+            count: 1610
+            responseTimesMean: 24.683850931677018
+            responseTimes95th: 70
+        req2: {}
+        req3:
+          service_time:
+            count: 537
+            responseTimesMean: 13.856610800744878
+            responseTimes95th: 56
+        req4: {}
+    servicef:
+      start: 1607857709920869
+      end: 1607857859921077
+      cpuUsageMean: 47.833502253162294
+      cpuUsage70th: 53.79103989636015
+      cpuUsage75th: 54.95620271881209
+      cpuUsage80th: 57.10216245803002
+      cpuUsage85th: 60.15324845549911
+      cpuUsage90th: 62.30464258962762
+      cpuUsage95th: 65.84638650743008
+      cpuUsage99th: 71.00173507339825
+      numberOfCores: 0.5
+      replicaCount: 1
+      responseTimes:
+        req1: {}
+        req2:
+          service_time:
+            count: 897
+            responseTimesMean: 32.96321070234114
+            responseTimes95th: 79
+        req3: {}
+        req4:
+          service_time:
+            count: 534
+            responseTimesMean: 29.138576779026216
+            responseTimes95th: 77
+  specs:
+    serviceb:
+      replicaCount: 1
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":25, "req2":26, "req3":21, "req4":28, "req5":80}
+      - PORT=10081
+      - SEED=9
+      - SERVICE_NAME=serviceb
+      - WORKER_COUNT=1
+      CPULimits: 0.5
+      CPUReservation: 0.5
+    servicec:
+      replicaCount: 1
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":20, "req2":16, "req3":21, "req4":23, "req5":83}
+      - PORT=10082
+      - SEED=9
+      - SERVICE_NAME=servicec
+      - WORKER_COUNT=1
+      CPULimits: 0.5
+      CPUReservation: 0.5
+    serviced:
+      replicaCount: 1
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":13,"req2":9,"req3":9,"req4":24,"req5":86}
+      - PORT=10083
+      - SEED=9
+      - SERVICE_NAME=serviced
+      - WORKER_COUNT=1
+      CPULimits: 0.5
+      CPUReservation: 0.5
+    servicee:
+      replicaCount: 1
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":17,"req2":20,"req3":8,"req4":26,"req5":10}
+      - PORT=10084
+      - SEED=9
+      - SERVICE_NAME=servicee
+      - WORKER_COUNT=1
+      CPULimits: 0.5
+      CPUReservation: 0.5
+    servicef:
+      replicaCount: 1
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":16,"req2":21,"req3":15,"req4":19,"req5":21}
+      - PORT=10085
+      - SEED=9
+      - SERVICE_NAME=servicef
+      - WORKER_COUNT=1
+      CPULimits: 0.5
+      CPUReservation: 0.5
+  requestsResponseTimes:
+    req1:
+      count: 1610
+      responseTimesMean: 849.7919254658385
+      responseTimesSTD: 242.56055822588215
+      responseTimes90th: 1155
+      responseTimes95th: 1284
+      responseTimes99th: 1550.5
+    req2:
+      count: 897
+      responseTimesMean: 856.3991081382386
+      responseTimesSTD: 237.36793692429296
+      responseTimes90th: 1183
+      responseTimes95th: 1289.5
+      responseTimes99th: 1519
+    req3:
+      count: 537
+      responseTimesMean: 212.6145251396648
+      responseTimesSTD: 136.22313827571014
+      responseTimes90th: 395
+      responseTimes95th: 455.5
+      responseTimes99th: 628
+    req4:
+      count: 534
+      responseTimesMean: 277.0561797752809
+      responseTimesSTD: 138.99872223839958
+      responseTimes90th: 453.5
+      responseTimes95th: 529.5
+      responseTimes99th: 658
+  jaegerFile: /home/vahid/Desktop/jaegers/ad49dea6-6a40-44a2-68c6-ff8786af0837.zip
+  workload: 40_250_0.45_0.25_0.15_0.15
+  hash: v5_muck_star-small_40_250_0.45_0.25_0.15_0.15_150_0.5_0.5_0.5_0.5_0.5_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 0
+        passes: 3826
+        value: 0
+      data_received:
+        count: 554770
+        rate: 3406.399666713008
+      data_sent:
+        count: 466772
+        rate: 2866.0742023378416
+      http_req_blocked:
+        avg: 0.01432103110297962
+        max: 3.230224
+        med: 0.006337
+        min: 0.003902
+        p(90): 0.011391499999999999
+        p(95): 0.0170955
+      http_req_connecting:
+        avg: 0.004730127025614218
+        max: 0.673305
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_duration:
+        avg: 692.8493112514369
+        max: 2897.976024
+        med: 718.3983519999999
+        min: 39.782309
+        p(90): 1131.2815260000002
+        p(95): 1276.64735925
+      http_req_receiving:
+        avg: 0.06050278855201253
+        max: 1.63645
+        med: 0.053680000000000005
+        min: 0.039497
+        p(90): 0.075707
+        p(95): 0.08862675
+      http_req_sending:
+        avg: 0.03474589309984322
+        max: 0.714967
+        med: 0.0314
+        min: 0.021201
+        p(90): 0.043398
+        p(95): 0.051354250000000004
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 692.7540625697848
+        max: 2897.806439
+        med: 718.315558
+        min: 39.704361
+        p(90): 1131.183354
+        p(95): 1276.5056869999999
+      http_reqs:
+        count: 3826
+        rate: 23.492411494572472
+      iteration_duration:
+        avg: 1692.6834574624995
+        max: 4336.068343
+        med: 1686.87364
+        min: 0.00319
+        p(90): 2292.0228792
+        p(95): 2430.3972991
+      iterations:
+        count: 3826
+        rate: 23.492411494572472
+      req1_counter:
+        count: 1724
+        rate: 10.585707636341594
+      req1_duration:
+        avg: 873.5279958810881
+        max: 2897.976024
+        med: 826.1699675
+        min: 150.241977
+        p(90): 1195.0976716
+        p(95): 1332.8558626499996
+      req2_counter:
+        count: 954
+        rate: 5.857752369530093
+      req2_duration:
+        avg: 877.8765460817621
+        max: 2842.136354
+        med: 835.773698
+        min: 218.07276
+        p(90): 1201.3556432
+        p(95): 1306.3182502999991
+      req3_counter:
+        count: 578
+        rate: 3.5490365509312305
+      req3_duration:
+        avg: 236.59666285294128
+        max: 1933.368278
+        med: 193.522808
+        min: 39.782309
+        p(90): 425.3245120000002
+        p(95): 537.63224155
+      req4_counter:
+        count: 570
+        rate: 3.4999149377695526
+      req4_duration:
+        avg: 299.3545681719301
+        max: 1836.452493
+        med: 268.95941700000003
+        min: 63.067979
+        p(90): 470.70287550000006
+        p(95): 586.8718147
+      vus:
+        max: 40
+        min: 40
+        value: 40
+      vus_max:
+        max: 40
+        min: 40
+        value: 40
+    root_group:
+      checks:
+        is_ok:
+          fails: 0
+          id: 0166553523378fa80e37f3b4c806b5cc
+          name: is_ok
+          passes: 3826
+          path: ::is_ok
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+- info:
+    serviceb:
+      start: 1607861703990310
+      end: 1607861853990484
+      cpuUsageMean: 18.955725190668893
+      cpuUsage70th: 20.544421276418543
+      cpuUsage75th: 21.054931347029374
+      cpuUsage80th: 21.656001801895748
+      cpuUsage85th: 22.3099010292813
+      cpuUsage90th: 23.031338787484934
+      cpuUsage95th: 24.037527003120967
+      cpuUsage99th: 26.224613336324254
+      numberOfCores: 0.9
+      replicaCount: 5
+      responseTimes:
+        req1:
+          service_time:
+            count: 2379
+            responseTimesMean: 27.715006305170238
+            responseTimes95th: 37
+        req2:
+          service_time:
+            count: 1319
+            responseTimesMean: 28.9461713419257
+            responseTimes95th: 40
+        req3: {}
+        req4: {}
+    servicec:
+      start: 1607861703990310
+      end: 1607861853990484
+      cpuUsageMean: 59.672311702958794
+      cpuUsage70th: 63.67577764419889
+      cpuUsage75th: 66.62976661956881
+      cpuUsage80th: 69.3548313126625
+      cpuUsage85th: 71.69450801281508
+      cpuUsage90th: 74.76843031933446
+      cpuUsage95th: 82.53952190127333
+      cpuUsage99th: 93.76527395504782
+      numberOfCores: 0.5
+      replicaCount: 1
+      responseTimes:
+        req1: {}
+        req2: {}
+        req3:
+          service_time:
+            count: 788
+            responseTimesMean: 31.31725888324873
+            responseTimes95th: 79.5
+        req4:
+          service_time:
+            count: 780
+            responseTimesMean: 32.63846153846154
+            responseTimes95th: 80
+    serviced:
+      start: 1607861703990310
+      end: 1607861853990484
+      cpuUsageMean: 17.263398662073577
+      cpuUsage70th: 18.538176494416618
+      cpuUsage75th: 19.125859658694885
+      cpuUsage80th: 19.59906246877536
+      cpuUsage85th: 20.50102240043705
+      cpuUsage90th: 21.29379585490895
+      cpuUsage95th: 22.275748687058847
+      cpuUsage99th: 24.196418535468737
+      numberOfCores: 0.9
+      replicaCount: 5
+      responseTimes:
+        req1:
+          service_time:
+            count: 2379
+            responseTimesMean: 15.443883984867592
+            responseTimes95th: 23
+        req2:
+          service_time:
+            count: 1319
+            responseTimesMean: 11.673995451099318
+            responseTimes95th: 18
+        req3:
+          service_time:
+            count: 788
+            responseTimesMean: 11.700507614213198
+            responseTimes95th: 18
+        req4:
+          service_time:
+            count: 780
+            responseTimesMean: 26.362820512820512
+            responseTimes95th: 37
+    servicee:
+      start: 1607861703990310
+      end: 1607861853990484
+      cpuUsageMean: 78.56849458060141
+      cpuUsage70th: 82.81402973124592
+      cpuUsage75th: 84.78032473859234
+      cpuUsage80th: 87.68804743409753
+      cpuUsage85th: 89.34292168961872
+      cpuUsage90th: 90.62261622137208
+      cpuUsage95th: 95.09072545850934
+      cpuUsage99th: 100.37760769744399
+      numberOfCores: 0.5
+      replicaCount: 1
+      responseTimes:
+        req1:
+          service_time:
+            count: 2379
+            responseTimesMean: 29.704918032786885
+            responseTimes95th: 76
+        req2: {}
+        req3:
+          service_time:
+            count: 788
+            responseTimesMean: 13.868020304568528
+            responseTimes95th: 58
+        req4: {}
+    servicef:
+      start: 1607861703990310
+      end: 1607861853990484
+      cpuUsageMean: 68.2207204026868
+      cpuUsage70th: 73.82444076108658
+      cpuUsage75th: 74.84508830201169
+      cpuUsage80th: 77.13425643293436
+      cpuUsage85th: 81.53525648722935
+      cpuUsage90th: 84.13754728464261
+      cpuUsage95th: 88.73230881498543
+      cpuUsage99th: 96.75084096097376
+      numberOfCores: 0.5
+      replicaCount: 1
+      responseTimes:
+        req1: {}
+        req2:
+          service_time:
+            count: 1319
+            responseTimesMean: 33.02501895375284
+            responseTimes95th: 79
+        req3: {}
+        req4:
+          service_time:
+            count: 780
+            responseTimesMean: 30.871794871794872
+            responseTimes95th: 74
+  specs:
+    serviceb:
+      replicaCount: 5
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":25, "req2":26, "req3":21, "req4":28, "req5":80}
+      - PORT=10081
+      - SEED=9
+      - SERVICE_NAME=serviceb
+      - WORKER_COUNT=1
+      CPULimits: 0.9
+      CPUReservation: 0.9
+    servicec:
+      replicaCount: 1
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":20, "req2":16, "req3":21, "req4":23, "req5":83}
+      - PORT=10082
+      - SEED=9
+      - SERVICE_NAME=servicec
+      - WORKER_COUNT=1
+      CPULimits: 0.5
+      CPUReservation: 0.5
+    serviced:
+      replicaCount: 5
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":13,"req2":9,"req3":9,"req4":24,"req5":86}
+      - PORT=10083
+      - SEED=9
+      - SERVICE_NAME=serviced
+      - WORKER_COUNT=1
+      CPULimits: 0.9
+      CPUReservation: 0.9
+    servicee:
+      replicaCount: 1
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":17,"req2":20,"req3":8,"req4":26,"req5":10}
+      - PORT=10084
+      - SEED=9
+      - SERVICE_NAME=servicee
+      - WORKER_COUNT=1
+      CPULimits: 0.5
+      CPUReservation: 0.5
+    servicef:
+      replicaCount: 1
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":16,"req2":21,"req3":15,"req4":19,"req5":21}
+      - PORT=10085
+      - SEED=9
+      - SERVICE_NAME=servicef
+      - WORKER_COUNT=1
+      CPULimits: 0.5
+      CPUReservation: 0.5
+  requestsResponseTimes:
+    req1:
+      count: 2379
+      responseTimesMean: 127.24295922656579
+      responseTimesSTD: 84.1452125851196
+      responseTimes90th: 229
+      responseTimes95th: 308.5
+      responseTimes99th: 454
+    req2:
+      count: 1319
+      responseTimesMean: 111.42304776345716
+      responseTimesSTD: 59.502575038397666
+      responseTimes90th: 193.5
+      responseTimes95th: 238
+      responseTimes99th: 329.5
+    req3:
+      count: 788
+      responseTimesMean: 161.88832487309645
+      responseTimesSTD: 122.85405776107456
+      responseTimes90th: 312
+      responseTimes95th: 403
+      responseTimes99th: 621.5
+    req4:
+      count: 780
+      responseTimesMean: 178.40897435897435
+      responseTimesSTD: 113.46328072688104
+      responseTimes90th: 319
+      responseTimes95th: 394
+      responseTimes99th: 569.5
+  jaegerFile: /home/vahid/Desktop/jaegers/1820e3e4-eb1d-45de-578d-dc8841a12526.zip
+  workload: 40_250_0.45_0.25_0.15_0.15
+  hash: v5_muck_star-small_40_250_0.45_0.25_0.15_0.15_150_4.5_0.5_4.5_0.5_0.5_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 0
+        passes: 5656
+        value: 0
+      data_received:
+        count: 820120
+        rate: 5032.920677938496
+      data_sent:
+        count: 690032
+        rate: 4234.595329024114
+      http_req_blocked:
+        avg: 0.0114732501768034
+        max: 0.721365
+        med: 0.006356
+        min: 0.004104
+        p(90): 0.008695
+        p(95): 0.01584625
+      http_req_connecting:
+        avg: 0.0032704117751060826
+        max: 0.605634
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_duration:
+        avg: 147.5303675265206
+        max: 2034.269159
+        med: 105.9263345
+        min: 27.114252
+        p(90): 268.1974645
+        p(95): 353.35213650000003
+      http_req_receiving:
+        avg: 0.057471105198019935
+        max: 1.07216
+        med: 0.053222
+        min: 0.033651
+        p(90): 0.069202
+        p(95): 0.07715675
+      http_req_sending:
+        avg: 0.03326419819660526
+        max: 0.645828
+        med: 0.0310135
+        min: 0.016627
+        p(90): 0.040322
+        p(95): 0.04639649999999999
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 147.4396322231262
+        max: 2034.090321
+        med: 105.831042
+        min: 27.024304
+        p(90): 268.1138895
+        p(95): 353.26677874999996
+      http_reqs:
+        count: 5656
+        rate: 34.70979777888618
+      iteration_duration:
+        avg: 1147.7868938707763
+        max: 3072.459745
+        med: 1142.466014
+        min: 0.001985
+        p(90): 1538.8445996
+        p(95): 1608.5397312
+      iterations:
+        count: 5656
+        rate: 34.70979777888618
+      req1_counter:
+        count: 2549
+        rate: 15.642728878780211
+      req1_duration:
+        avg: 140.44921611965464
+        max: 1477.516895
+        med: 98.680551
+        min: 46.426807
+        p(90): 251.45524880000002
+        p(95): 346.3484087999998
+      req2_counter:
+        count: 1417
+        rate: 8.695859874943727
+      req2_duration:
+        avg: 118.19855001693705
+        max: 824.272911
+        med: 90.362929
+        min: 47.631826
+        p(90): 200.57067360000002
+        p(95): 248.84878440000006
+      req3_counter:
+        count: 849
+        rate: 5.210151752877363
+      req3_duration:
+        avg: 175.852329089517
+        max: 2034.269159
+        med: 131.380087
+        min: 27.114252
+        p(90): 334.3236006
+        p(95): 414.71951519999993
+      req4_counter:
+        count: 841
+        rate: 5.1610572722848795
+      req4_duration:
+        avg: 189.82251375743192
+        max: 1706.795839
+        med: 149.828095
+        min: 57.96916
+        p(90): 323.699137
+        p(95): 403.587182
+      vus:
+        max: 40
+        min: 40
+        value: 40
+      vus_max:
+        max: 40
+        min: 40
+        value: 40
+    root_group:
+      checks:
+        is_ok:
+          fails: 0
+          id: 0166553523378fa80e37f3b4c806b5cc
+          name: is_ok
+          passes: 5656
+          path: ::is_ok
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+- info:
+    serviceb:
+      start: 1607862043343245
+      end: 1607862193343447
+      cpuUsageMean: 19.34557707001521
+      cpuUsage70th: 20.74620364455702
+      cpuUsage75th: 21.28620393149214
+      cpuUsage80th: 22.096065056407845
+      cpuUsage85th: 22.936594070000975
+      cpuUsage90th: 23.656400569842923
+      cpuUsage95th: 24.97624888655863
+      cpuUsage99th: 29.82070545398085
+      numberOfCores: 0.9
+      replicaCount: 5
+      responseTimes:
+        req1:
+          service_time:
+            count: 2452
+            responseTimesMean: 27.672920065252853
+            responseTimes95th: 38
+        req2:
+          service_time:
+            count: 1359
+            responseTimesMean: 28.487122884473877
+            responseTimes95th: 40
+        req3: {}
+        req4: {}
+    servicec:
+      start: 1607862043343245
+      end: 1607862193343447
+      cpuUsageMean: 65.7081535927287
+      cpuUsage70th: 71.17491829590662
+      cpuUsage75th: 73.64555790170152
+      cpuUsage80th: 75.3638297341451
+      cpuUsage85th: 77.38277940248864
+      cpuUsage90th: 79.91163106842919
+      cpuUsage95th: 86.65102715060706
+      cpuUsage99th: 90.72919885269985
+      numberOfCores: 0.5
+      replicaCount: 1
+      responseTimes:
+        req1: {}
+        req2: {}
+        req3:
+          service_time:
+            count: 818
+            responseTimesMean: 35.12958435207824
+            responseTimes95th: 83.5
+        req4:
+          service_time:
+            count: 810
+            responseTimesMean: 37.977777777777774
+            responseTimes95th: 85.5
+    serviced:
+      start: 1607862043343245
+      end: 1607862193343447
+      cpuUsageMean: 17.835134551559875
+      cpuUsage70th: 19.407518400464912
+      cpuUsage75th: 19.852313493392888
+      cpuUsage80th: 20.278059444759585
+      cpuUsage85th: 20.902880189402
+      cpuUsage90th: 21.84197310642496
+      cpuUsage95th: 23.42176287150265
+      cpuUsage99th: 25.598829227892644
+      numberOfCores: 0.9
+      replicaCount: 5
+      responseTimes:
+        req1:
+          service_time:
+            count: 2452
+            responseTimesMean: 15.76957585644372
+            responseTimes95th: 23
+        req2:
+          service_time:
+            count: 1359
+            responseTimesMean: 11.974245768947755
+            responseTimes95th: 18
+        req3:
+          service_time:
+            count: 818
+            responseTimesMean: 11.876528117359413
+            responseTimes95th: 18
+        req4:
+          service_time:
+            count: 810
+            responseTimesMean: 27.43456790123457
+            responseTimes95th: 37
+    servicee:
+      start: 1607862043343245
+      end: 1607862193343447
+      cpuUsageMean: 10.651828091928639
+      cpuUsage70th: 11.734990426431668
+      cpuUsage75th: 12.077775485958465
+      cpuUsage80th: 12.439052957250004
+      cpuUsage85th: 12.868405930306322
+      cpuUsage90th: 13.52032842479426
+      cpuUsage95th: 14.489298709526132
+      cpuUsage99th: 16.589520909295665
+      numberOfCores: 0.9
+      replicaCount: 5
+      responseTimes:
+        req1:
+          service_time:
+            count: 2452
+            responseTimesMean: 21.33768352365416
+            responseTimes95th: 30
+        req2: {}
+        req3:
+          service_time:
+            count: 818
+            responseTimesMean: 11.2799511002445
+            responseTimes95th: 17
+        req4: {}
+    servicef:
+      start: 1607862043343245
+      end: 1607862193343447
+      cpuUsageMean: 15.521115843579562
+      cpuUsage70th: 16.983519641126065
+      cpuUsage75th: 17.513262010191987
+      cpuUsage80th: 18.021684590553846
+      cpuUsage85th: 18.65408640642569
+      cpuUsage90th: 19.539455788162464
+      cpuUsage95th: 20.872758019354947
+      cpuUsage99th: 22.367591698968354
+      numberOfCores: 0.83
+      replicaCount: 3
+      responseTimes:
+        req1: {}
+        req2:
+          service_time:
+            count: 1359
+            responseTimesMean: 25.471670345842533
+            responseTimes95th: 41
+        req3: {}
+        req4:
+          service_time:
+            count: 810
+            responseTimesMean: 22.74074074074074
+            responseTimes95th: 32.5
+  specs:
+    serviceb:
+      replicaCount: 5
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":25, "req2":26, "req3":21, "req4":28, "req5":80}
+      - PORT=10081
+      - SEED=9
+      - SERVICE_NAME=serviceb
+      - WORKER_COUNT=1
+      CPULimits: 0.9
+      CPUReservation: 0.9
+    servicec:
+      replicaCount: 1
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":20, "req2":16, "req3":21, "req4":23, "req5":83}
+      - PORT=10082
+      - SEED=9
+      - SERVICE_NAME=servicec
+      - WORKER_COUNT=1
+      CPULimits: 0.5
+      CPUReservation: 0.5
+    serviced:
+      replicaCount: 5
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":13,"req2":9,"req3":9,"req4":24,"req5":86}
+      - PORT=10083
+      - SEED=9
+      - SERVICE_NAME=serviced
+      - WORKER_COUNT=1
+      CPULimits: 0.9
+      CPUReservation: 0.9
+    servicee:
+      replicaCount: 5
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":17,"req2":20,"req3":8,"req4":26,"req5":10}
+      - PORT=10084
+      - SEED=9
+      - SERVICE_NAME=servicee
+      - WORKER_COUNT=1
+      CPULimits: 0.9
+      CPUReservation: 0.9
+    servicef:
+      replicaCount: 3
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":16,"req2":21,"req3":15,"req4":19,"req5":21}
+      - PORT=10085
+      - SEED=9
+      - SERVICE_NAME=servicef
+      - WORKER_COUNT=1
+      CPULimits: 0.83
+      CPUReservation: 0.83
+  requestsResponseTimes:
+    req1:
+      count: 2452
+      responseTimesMean: 77.51998368678629
+      responseTimesSTD: 19.574449221273447
+      responseTimes90th: 94
+      responseTimes95th: 113.5
+      responseTimes99th: 155.5
+    req2:
+      count: 1359
+      responseTimesMean: 78.26490066225166
+      responseTimesSTD: 20.484359973007344
+      responseTimes90th: 98.5
+      responseTimes95th: 117
+      responseTimes99th: 157.5
+    req3:
+      count: 818
+      responseTimesMean: 139.8753056234719
+      responseTimesSTD: 114.60719179961033
+      responseTimes90th: 288
+      responseTimes95th: 344.5
+      responseTimes99th: 484
+    req4:
+      count: 810
+      responseTimesMean: 164.00246913580247
+      responseTimesSTD: 101.96212075068586
+      responseTimes90th: 290
+      responseTimes95th: 353
+      responseTimes99th: 501.5
+  jaegerFile: /home/vahid/Desktop/jaegers/61a4f406-76d9-4ecf-545c-cdf246b9716e.zip
+  workload: 40_250_0.45_0.25_0.15_0.15
+  hash: v5_muck_star-small_40_250_0.45_0.25_0.15_0.15_150_4.5_0.5_4.5_4.5_2.5_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 0
+        passes: 5863
+        value: 0
+      data_received:
+        count: 850135
+        rate: 5216.412772076067
+      data_sent:
+        count: 715530
+        rate: 4390.478960169371
+      http_req_blocked:
+        avg: 0.011066853487975403
+        max: 0.902218
+        med: 0.00626
+        min: 0.003804
+        p(90): 0.0079168
+        p(95): 0.015271199999999964
+      http_req_connecting:
+        avg: 0.0031131466825857065
+        max: 0.728348
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_duration:
+        avg: 107.40099971942696
+        max: 1228.907529
+        med: 79.194555
+        min: 33.706009
+        p(90): 180.04540340000003
+        p(95): 263.9117875
+      http_req_receiving:
+        avg: 0.056715884530104094
+        max: 0.300906
+        med: 0.053177
+        min: 0.033956
+        p(90): 0.067865
+        p(95): 0.07634309999999998
+      http_req_sending:
+        avg: 0.032914107453522086
+        max: 0.233239
+        med: 0.03088
+        min: 0.020064
+        p(90): 0.039664200000000004
+        p(95): 0.046842699999999994
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 107.31136972744319
+        max: 1228.761282
+        med: 79.108877
+        min: 33.625923
+        p(90): 179.96212660000003
+        p(95): 263.82885650000003
+      http_reqs:
+        count: 5863
+        rate: 35.97526049707633
+      iteration_duration:
+        avg: 1107.545584171216
+        max: 2486.291769
+        med: 1106.2874425
+        min: 0.001945
+        p(90): 1504.7978446999998
+        p(95): 1557.7872115999999
+      iterations:
+        count: 5863
+        rate: 35.97526049707633
+      req1_counter:
+        count: 2638
+        rate: 16.186719630101884
+      req1_duration:
+        avg: 82.87413277103867
+        max: 685.36844
+        med: 75.41173950000001
+        min: 46.034935
+        p(90): 101.04314860000002
+        p(95): 131.028611
+      req2_counter:
+        count: 1473
+        rate: 9.038300991334372
+      req2_duration:
+        avg: 83.35400342973524
+        max: 688.03727
+        med: 75.839568
+        min: 47.191009
+        p(90): 106.92285759999999
+        p(95): 128.98940199999998
+      req3_counter:
+        count: 880
+        rate: 5.3996638644767465
+      req3_duration:
+        avg: 153.37558118409115
+        max: 1160.446119
+        med: 107.54951
+        min: 33.706009
+        p(90): 299.9186491
+        p(95): 381.6637266499998
+      req4_counter:
+        count: 872
+        rate: 5.350576011163322
+      req4_duration:
+        avg: 175.82470253555036
+        max: 1228.907529
+        med: 134.8576295
+        min: 58.972841
+        p(90): 309.3790262
+        p(95): 371.37204649999995
+      vus:
+        max: 40
+        min: 40
+        value: 40
+      vus_max:
+        max: 40
+        min: 40
+        value: 40
+    root_group:
+      checks:
+        is_ok:
+          fails: 0
+          id: 0166553523378fa80e37f3b4c806b5cc
+          name: is_ok
+          passes: 5863
+          path: ::is_ok
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+- info:
+    serviceb:
+      start: 1607862394368438
+      end: 1607862544368605
+      cpuUsageMean: 19.739617348229373
+      cpuUsage70th: 21.161761656809517
+      cpuUsage75th: 21.59044832574576
+      cpuUsage80th: 22.16992761904762
+      cpuUsage85th: 22.96905591159843
+      cpuUsage90th: 23.810418468114058
+      cpuUsage95th: 25.09703744470456
+      cpuUsage99th: 26.710725378709814
+      numberOfCores: 0.9
+      replicaCount: 5
+      responseTimes:
+        req1:
+          service_time:
+            count: 2503
+            responseTimesMean: 27.58210147822613
+            responseTimes95th: 38
+        req2:
+          service_time:
+            count: 1394
+            responseTimesMean: 28.88809182209469
+            responseTimes95th: 40
+        req3: {}
+        req4: {}
+    servicec:
+      start: 1607862394368438
+      end: 1607862544368605
+      cpuUsageMean: 8.746388173447892
+      cpuUsage70th: 9.4857106841741
+      cpuUsage75th: 9.920708736650235
+      cpuUsage80th: 10.314292377387968
+      cpuUsage85th: 11.040804682013992
+      cpuUsage90th: 11.763597324950656
+      cpuUsage95th: 12.755338142220927
+      cpuUsage99th: 14.87463863391137
+      numberOfCores: 0.9
+      replicaCount: 5
+      responseTimes:
+        req1: {}
+        req2: {}
+        req3:
+          service_time:
+            count: 831
+            responseTimesMean: 27.541516245487365
+            responseTimes95th: 44
+        req4:
+          service_time:
+            count: 829
+            responseTimesMean: 29.387213510253318
+            responseTimes95th: 46
+    serviced:
+      start: 1607862394368438
+      end: 1607862544368605
+      cpuUsageMean: 17.767572445644745
+      cpuUsage70th: 19.00710657053743
+      cpuUsage75th: 19.624306005738596
+      cpuUsage80th: 20.172070904253626
+      cpuUsage85th: 20.759477024479075
+      cpuUsage90th: 22.074458535229518
+      cpuUsage95th: 23.459958508873342
+      cpuUsage99th: 25.612263123215065
+      numberOfCores: 0.9
+      replicaCount: 5
+      responseTimes:
+        req1:
+          service_time:
+            count: 2503
+            responseTimesMean: 15.337594886136635
+            responseTimes95th: 23
+        req2:
+          service_time:
+            count: 1394
+            responseTimesMean: 11.489956958393114
+            responseTimes95th: 18
+        req3:
+          service_time:
+            count: 831
+            responseTimesMean: 11.536702767749698
+            responseTimes95th: 18
+        req4:
+          service_time:
+            count: 829
+            responseTimesMean: 26.329312424607963
+            responseTimes95th: 36
+    servicee:
+      start: 1607862394368438
+      end: 1607862544368605
+      cpuUsageMean: 10.673149842735004
+      cpuUsage70th: 11.92013598846425
+      cpuUsage75th: 12.207559451200847
+      cpuUsage80th: 12.544280964937983
+      cpuUsage85th: 13.088905409347248
+      cpuUsage90th: 13.54934602866565
+      cpuUsage95th: 14.520738795681387
+      cpuUsage99th: 16.331377435935508
+      numberOfCores: 0.9
+      replicaCount: 5
+      responseTimes:
+        req1:
+          service_time:
+            count: 2503
+            responseTimesMean: 20.492608869356772
+            responseTimes95th: 29
+        req2: {}
+        req3:
+          service_time:
+            count: 831
+            responseTimesMean: 11.34777376654633
+            responseTimes95th: 17
+        req4: {}
+    servicef:
+      start: 1607862394368438
+      end: 1607862544368605
+      cpuUsageMean: 15.806716621219385
+      cpuUsage70th: 17.503828033732464
+      cpuUsage75th: 17.99641260300797
+      cpuUsage80th: 18.486516308383234
+      cpuUsage85th: 18.98663301303808
+      cpuUsage90th: 19.846153999779155
+      cpuUsage95th: 21.40279397488716
+      cpuUsage99th: 23.31839075891516
+      numberOfCores: 0.83
+      replicaCount: 3
+      responseTimes:
+        req1: {}
+        req2:
+          service_time:
+            count: 1394
+            responseTimesMean: 24.992109038737446
+            responseTimes95th: 38
+        req3: {}
+        req4:
+          service_time:
+            count: 829
+            responseTimesMean: 23.195416164053075
+            responseTimes95th: 34
+  specs:
+    serviceb:
+      replicaCount: 5
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":25, "req2":26, "req3":21, "req4":28, "req5":80}
+      - PORT=10081
+      - SEED=9
+      - SERVICE_NAME=serviceb
+      - WORKER_COUNT=1
+      CPULimits: 0.9
+      CPUReservation: 0.9
+    servicec:
+      replicaCount: 5
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":20, "req2":16, "req3":21, "req4":23, "req5":83}
+      - PORT=10082
+      - SEED=9
+      - SERVICE_NAME=servicec
+      - WORKER_COUNT=1
+      CPULimits: 0.9
+      CPUReservation: 0.9
+    serviced:
+      replicaCount: 5
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":13,"req2":9,"req3":9,"req4":24,"req5":86}
+      - PORT=10083
+      - SEED=9
+      - SERVICE_NAME=serviced
+      - WORKER_COUNT=1
+      CPULimits: 0.9
+      CPUReservation: 0.9
+    servicee:
+      replicaCount: 5
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":17,"req2":20,"req3":8,"req4":26,"req5":10}
+      - PORT=10084
+      - SEED=9
+      - SERVICE_NAME=servicee
+      - WORKER_COUNT=1
+      CPULimits: 0.9
+      CPUReservation: 0.9
+    servicef:
+      replicaCount: 3
+      envs:
+      - MEAN_RESPONSE_TIMES={"req1":16,"req2":21,"req3":15,"req4":19,"req5":21}
+      - PORT=10085
+      - SEED=9
+      - SERVICE_NAME=servicef
+      - WORKER_COUNT=1
+      CPULimits: 0.83
+      CPUReservation: 0.83
+  requestsResponseTimes:
+    req1:
+      count: 2503
+      responseTimesMean: 75.73312025569317
+      responseTimesSTD: 17.553089659214418
+      responseTimes90th: 90
+      responseTimes95th: 105
+      responseTimes99th: 150
+    req2:
+      count: 1394
+      responseTimesMean: 77.43974175035868
+      responseTimesSTD: 18.91029640486423
+      responseTimes90th: 96
+      responseTimes95th: 112
+      responseTimes99th: 153
+    req3:
+      count: 831
+      responseTimesMean: 63.560770156438025
+      responseTimesSTD: 18.881500159247366
+      responseTimes90th: 79.5
+      responseTimes95th: 108.5
+      responseTimes99th: 140
+    req4:
+      count: 829
+      responseTimesMean: 92.33655006031363
+      responseTimesSTD: 24.31307417903359
+      responseTimes90th: 122
+      responseTimes95th: 143.5
+      responseTimes99th: 181
+  jaegerFile: /home/vahid/Desktop/jaegers/294b5ba4-ddb8-4875-5998-a023fe528506.zip
+  workload: 40_250_0.45_0.25_0.15_0.15
+  hash: v5_muck_star-small_40_250_0.45_0.25_0.15_0.15_150_4.5_4.5_4.5_4.5_2.5_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 0
+        passes: 5998
+        value: 0
+      data_received:
+        count: 869710
+        rate: 5336.26264069066
+      data_sent:
+        count: 731878
+        rate: 4490.5695334575885
+      http_req_blocked:
+        avg: 0.010911693231077072
+        max: 0.885536
+        med: 0.00606
+        min: 0.003492
+        p(90): 0.008054200000000001
+        p(95): 0.015511949999999988
+      http_req_connecting:
+        avg: 0.002999971490496832
+        max: 0.770202
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_duration:
+        avg: 82.39819685278432
+        max: 690.345011
+        med: 75.1608005
+        min: 38.317564
+        p(90): 104.4346765
+        p(95): 132.44610339999994
+      http_req_receiving:
+        avg: 0.056336943481160404
+        max: 0.425209
+        med: 0.0526
+        min: 0.034912
+        p(90): 0.0665921
+        p(95): 0.07385299999999999
+      http_req_sending:
+        avg: 0.033176744914971634
+        max: 0.229835
+        med: 0.030974
+        min: 0.015423
+        p(90): 0.039496
+        p(95): 0.04694454999999998
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 82.30868316438813
+        max: 690.171801
+        med: 75.07651949999999
+        min: 38.20245
+        p(90): 104.3513563
+        p(95): 132.29307989999998
+      http_reqs:
+        count: 5998
+        rate: 36.801811315108004
+      iteration_duration:
+        avg: 1082.343469827305
+        max: 1745.161356
+        med: 1082.607664
+        min: 0.0022
+        p(90): 1483.4014892
+        p(95): 1531.6548543
+      iterations:
+        count: 5998
+        rate: 36.801811315108004
+      req1_counter:
+        count: 2702
+        rate: 16.578608565092
+      req1_duration:
+        avg: 81.51188559437476
+        max: 690.345011
+        med: 74.312671
+        min: 44.763142
+        p(90): 98.77887820000001
+        p(95): 123.26791829999992
+      req2_counter:
+        count: 1505
+        rate: 9.23419907123
+      req2_duration:
+        avg: 83.00652049767439
+        max: 596.443563
+        med: 75.544071
+        min: 46.49395
+        p(90): 102.83758240000002
+        p(95): 127.51222159999999
+      req3_counter:
+        count: 899
+        rate: 5.515976720954001
+      req3_duration:
+        avg: 69.01943070745276
+        max: 487.595503
+        med: 60.186259
+        min: 38.317564
+        p(90): 91.19127620000003
+        p(95): 124.84886279999985
+      req4_counter:
+        count: 892
+        rate: 5.473026957832
+      req4_duration:
+        avg: 97.54034561883408
+        max: 563.416393
+        med: 87.5846535
+        min: 58.225443
+        p(90): 133.3597246
+        p(95): 156.98868785
+      vus:
+        max: 40
+        min: 40
+        value: 40
+      vus_max:
+        max: 40
+        min: 40
+        value: 40
+    root_group:
+      checks:
+        is_ok:
+          fails: 0
+          id: 0166553523378fa80e37f3b4c806b5cc
+          name: is_ok
+          passes: 5998
+          path: ::is_ok
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+command: /tmp/go-build755334763/b001/exe/main autoconfig --appname muck_star-small
+  --config configurations/muck_star.yaml --workload 40_250_0.45_0.25_0.15_0.15 --testName
+  bnv1-300-2.0-mc-c-0.5 bnv1 --property ResponseTimes95Percentile --value 300 --demands
+  /home/vahid/Dropbox/data/swarm-manager-data/demands/muck_star-small_demands.yaml
+  --mc --stepsize 2.0 --constantinit 0.5
+config:
+  version: v5
+  appname: muck_star-small
+  jaeger:
+    host: http://136.159.209.204:16686
+    rootservice: servicea
+    detailsfilepath: /home/vahid/Desktop/projects/swarmmanager/configurations/formulas/muck_general.yaml
+    storepath: /home/vahid/Desktop/jaegers
+  cache:
+    type: dropbox
+    details:
+      path: /home/vahid/Dropbox/data/swarm-manager-data/cache-v2
+  results:
+    path: /home/vahid/Dropbox/data/swarm-manager-data/results/muck_star-small/40_250_0.45_0.25_0.15_0.15/bnv1/
+  testbed:
+    dockercomposefile: /home/vahid/Desktop/projects/swarmmanager/compose_files/star-docker-compose-5.yml
+    servicecount: 7
+    stackname: micromuck-star
+    servicestoconfigure:
+    - serviceb
+    - servicec
+    - serviced
+    - servicee
+    - servicef
+  host:
+    availablecpucount: 24
+    host: tcp://136.159.209.204:2375
+  log:
+    directory: /home/vahid/Desktop/projects/swarm-manager-data/logs
+  loadgenerator:
+    type: k6
+    details:
+      host: http://136.159.209.214:7112
+      script: /home/vahid/Desktop/projects/swarmmanager/workload-scripts/micromuck/general-script.js
+    args:
+      ARG_ARCHITECTURE: smallStarArchitecture
+      ARG_BASE_URL: http://136.159.209.204:10080
+      ARG_SLEEP_DURATION: "1"
+      REQUEST_NAMES: req1,req2,req3,req4
+  test:
+    duration: 150
+    waitafterloadgeneratordone: 15
+  usagecollector:
+    type: MultiHostCollector
+    details:
+      hosts:
+      - tcp://136.159.209.204:2375
+  continuesruns: false
