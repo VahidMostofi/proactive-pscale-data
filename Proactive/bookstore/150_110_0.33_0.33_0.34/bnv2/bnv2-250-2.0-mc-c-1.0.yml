@@ -1,0 +1,1971 @@
+name: bnv2-250-2.0-mc-c-1.0
+workload: 150_110_0.33_0.33_0.34
+steps:
+- info:
+    auth:
+      start: 1607499315726044
+      end: 1607499375726267
+      cpuUsageMean: 99.45839422204374
+      cpuUsage70th: 100.26687288238111
+      cpuUsage75th: 100.32425339588596
+      cpuUsage80th: 100.39779246258396
+      cpuUsage85th: 100.47848527751532
+      cpuUsage90th: 100.56517507480731
+      cpuUsage95th: 100.78994647812121
+      cpuUsage99th: 101.34297684569785
+      numberOfCores: 1
+      replicaCount: 1
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login:
+          service_time:
+            count: 781
+            responseTimesMean: 8544.993597951345
+            responseTimes95th: 10128
+    books:
+      start: 1607499315726044
+      end: 1607499375726267
+      cpuUsageMean: 26.26749550281571
+      cpuUsage70th: 26.995157752534418
+      cpuUsage75th: 27.722921824370317
+      cpuUsage80th: 29.918659180663543
+      cpuUsage85th: 32.5259834710261
+      cpuUsage90th: 34.52483646175579
+      cpuUsage95th: 45.84767113416214
+      cpuUsage99th: 64.92662616263635
+      numberOfCores: 1
+      replicaCount: 1
+      responseTimes:
+        edit_book:
+          service_time:
+            count: 745
+            responseTimesMean: 17.428187919463088
+            responseTimes95th: 66.5
+        get_book:
+          service_time:
+            count: 745
+            responseTimesMean: 12.881879194630873
+            responseTimes95th: 50.5
+        login: {}
+    entry:
+      start: 1607499315726044
+      end: 1607499375726267
+      cpuUsageMean: 36.208422412832064
+      cpuUsage70th: 37.18208608810042
+      cpuUsage75th: 37.761477084639495
+      cpuUsage80th: 40.14304812002102
+      cpuUsage85th: 41.28781057700501
+      cpuUsage90th: 45.34786515445141
+      cpuUsage95th: 56.94344344768026
+      cpuUsage99th: 80.78902824663805
+      numberOfCores: 1
+      replicaCount: 1
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login: {}
+  specs:
+    auth:
+      replicaCount: 1
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=auth
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3007
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    books:
+      replicaCount: 1
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=books
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3009
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    entry:
+      replicaCount: 1
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=gateway
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+  requestsResponseTimes:
+    edit_book:
+      count: 745
+      responseTimesMean: 43.5489932885906
+      responseTimesSTD: 101.48697447908988
+      responseTimes90th: 42
+      responseTimes95th: 95
+      responseTimes99th: 601.5
+    get_book:
+      count: 745
+      responseTimesMean: 37.718120805369125
+      responseTimesSTD: 95.81742149651288
+      responseTimes90th: 33
+      responseTimes95th: 99
+      responseTimes99th: 561
+    login:
+      count: 781
+      responseTimesMean: 8725.631241997438
+      responseTimesSTD: 984.1378879930779
+      responseTimes90th: 10203
+      responseTimes95th: 10299.5
+      responseTimes99th: 10453
+  jaegerFile: /home/vahid/Desktop/jaegers/752d1571-4f90-46a6-5805-d0bbe633334a.zip
+  workload: 150_110_0.33_0.33_0.34
+  hash: v2_bookstore_nodejs_150_110_0.33_0.33_0.34_60_1.0_1.0_1.0_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 11
+        passes: 3296
+        value: 0
+      data_received:
+        count: 1.838408e+06
+        rate: 27751.155353355673
+      data_sent:
+        count: 768164
+        rate: 11595.597114925036
+      edit_book_counter:
+        count: 857
+        rate: 12.936595215983509
+      edit_book_duration_trend:
+        avg: 172.25996324153982
+        max: 2026.959581
+        med: 21.168446
+        min: 12.7045
+        p(90): 615.0034166
+        p(95): 1306.985623
+      get_book_counter:
+        count: 856
+        rate: 12.92150000569648
+      get_book_duration_trend:
+        avg: 175.80074619976625
+        max: 1989.911448
+        med: 16.638734499999998
+        min: 10.319389
+        p(90): 618.7094075
+        p(95): 1287.1057974999999
+      http_req_blocked:
+        avg: 0.11958527808764874
+        max: 29.760598
+        med: 0.0073265
+        min: 0.00532
+        p(90): 0.015023599999999995
+        p(95): 0.3067654499999998
+      http_req_connecting:
+        avg: 0.10247893904382468
+        max: 29.674234
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0.1607164499999995
+      http_req_duration:
+        avg: 2732.4717473211163
+        max: 10602.277486
+        med: 28.052872999999998
+        min: 10.319389
+        p(90): 9338.3577415
+        p(95): 10072.859950999999
+      http_req_receiving:
+        avg: 0.08051800717131477
+        max: 1.10221
+        med: 0.074884
+        min: 0.056614
+        p(90): 0.1007763
+        p(95): 0.11131885
+      http_req_sending:
+        avg: 0.042556552988047794
+        max: 1.145924
+        med: 0.0374965
+        min: 0.025581
+        p(90): 0.0528654
+        p(95): 0.08777549999999987
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 2732.3486727609506
+        max: 10602.144289
+        med: 27.9276755
+        min: 10.211418
+        p(90): 9338.2551669
+        p(95): 10072.7449562
+      http_reqs:
+        count: 2510
+        rate: 37.88897782044178
+      iteration_duration:
+        avg: 3731.226258784864
+        max: 11931.078496
+        med: 1344.7625415
+        min: 514.317116
+        p(90): 10357.6661061
+        p(95): 10993.751091799999
+      iterations:
+        count: 2510
+        rate: 37.88897782044178
+      login_counter:
+        count: 797
+        rate: 12.030882598761792
+      login_duration_trend:
+        avg: 8231.357413464244
+        max: 10602.277486
+        med: 8389.225574
+        min: 614.520425
+        p(90): 10200.8971882
+        p(95): 10300.4226808
+      vus:
+        max: 150
+        min: 150
+        value: 150
+      vus_max:
+        max: 150
+        min: 150
+        value: 150
+    root_group:
+      checks:
+        is api key present:
+          fails: 11
+          id: 706b78755ca4cbfd382a7b7997f4e68a
+          name: is api key present
+          passes: 786
+          path: ::is api key present
+        is_edit_book_200:
+          fails: 0
+          id: fd92247b619aedca8dd4d03a8934ebf1
+          name: is_edit_book_200
+          passes: 857
+          path: ::is_edit_book_200
+        is_get_book_200:
+          fails: 0
+          id: d1a52362b30711900fd73a0a8229e6ae
+          name: is_get_book_200
+          passes: 856
+          path: ::is_get_book_200
+        is_login_200:
+          fails: 0
+          id: 52213c9edc1a14125a332eb2ddab30ff
+          name: is_login_200
+          passes: 797
+          path: ::is_login_200
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+- info:
+    auth:
+      start: 1607499484703076
+      end: 1607499544703351
+      cpuUsageMean: 94.3831716924345
+      cpuUsage70th: 100.04143450715205
+      cpuUsage75th: 100.13909103235747
+      cpuUsage80th: 100.27468139277514
+      cpuUsage85th: 100.39284502848446
+      cpuUsage90th: 100.56408699661233
+      cpuUsage95th: 100.6963403123197
+      cpuUsage99th: 101.73684948641346
+      numberOfCores: 1
+      replicaCount: 3
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login:
+          service_time:
+            count: 1748
+            responseTimesMean: 1751.766590389016
+            responseTimes95th: 3102
+    books:
+      start: 1607499484703076
+      end: 1607499544703351
+      cpuUsageMean: 48.90005906263802
+      cpuUsage70th: 50.591771722536976
+      cpuUsage75th: 50.999738524552654
+      cpuUsage80th: 53.19111236026637
+      cpuUsage85th: 54.084351795018435
+      cpuUsage90th: 62.011196790918845
+      cpuUsage95th: 90.58363505071839
+      cpuUsage99th: 97.59823819926225
+      numberOfCores: 1
+      replicaCount: 1
+      responseTimes:
+        edit_book:
+          service_time:
+            count: 1780
+            responseTimesMean: 36.619101123595506
+            responseTimes95th: 154
+        get_book:
+          service_time:
+            count: 1756
+            responseTimesMean: 34.316059225512525
+            responseTimes95th: 189.5
+        login: {}
+    entry:
+      start: 1607499484703076
+      end: 1607499544703351
+      cpuUsageMean: 63.20355333480345
+      cpuUsage70th: 63.799373348768995
+      cpuUsage75th: 64.8422960778419
+      cpuUsage80th: 67.44085853371618
+      cpuUsage85th: 67.90554965769863
+      cpuUsage90th: 85.79063721797012
+      cpuUsage95th: 94.93836583413781
+      cpuUsage99th: 99.1612283149376
+      numberOfCores: 1
+      replicaCount: 1
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login: {}
+  specs:
+    auth:
+      replicaCount: 3
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=auth
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3007
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    books:
+      replicaCount: 1
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=books
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3009
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    entry:
+      replicaCount: 1
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=gateway
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+  requestsResponseTimes:
+    edit_book:
+      count: 1780
+      responseTimesMean: 66.24606741573034
+      responseTimesSTD: 181.64494664547735
+      responseTimes90th: 73
+      responseTimes95th: 269
+      responseTimes99th: 1226.5
+    get_book:
+      count: 1756
+      responseTimesMean: 63.49373576309795
+      responseTimesSTD: 176.89727295003823
+      responseTimes90th: 91
+      responseTimes95th: 331.5
+      responseTimes99th: 1009.5
+    login:
+      count: 1748
+      responseTimesMean: 1965.4988558352402
+      responseTimesSTD: 1255.119586641905
+      responseTimes90th: 3270.5
+      responseTimes95th: 3332.5
+      responseTimes99th: 3451.5
+  jaegerFile: /home/vahid/Desktop/jaegers/7732498a-2f02-4d2a-6df3-6c664a955e73.zip
+  workload: 150_110_0.33_0.33_0.34
+  hash: v2_bookstore_nodejs_150_110_0.33_0.33_0.34_60_3.0_1.0_1.0_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 25
+        passes: 7457
+        value: 0
+      data_received:
+        count: 4.161007e+06
+        rate: 62710.05000344546
+      data_sent:
+        count: 1.684466e+06
+        rate: 25386.390142843728
+      edit_book_counter:
+        count: 1918
+        rate: 28.905953752687363
+      edit_book_duration_trend:
+        avg: 156.9746419817522
+        max: 2246.145784
+        med: 23.05735
+        min: 11.385918
+        p(90): 373.02063169999997
+        p(95): 1345.1084298999992
+      get_book_counter:
+        count: 1890
+        rate: 28.483969026370758
+      get_book_duration_trend:
+        avg: 149.33300152275098
+        max: 2230.61986
+        med: 17.9263665
+        min: 9.152838
+        p(90): 354.3919152000012
+        p(95): 1295.91667205
+      http_req_blocked:
+        avg: 0.03859504003542969
+        max: 22.578009
+        med: 0.00721
+        min: 0.004817
+        p(90): 0.009181800000000006
+        p(95): 0.015165400000000004
+      http_req_connecting:
+        avg: 0.026834447298494234
+        max: 22.467976
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_duration:
+        avg: 730.1138218641267
+        max: 3541.568472
+        med: 33.495338
+        min: 9.152838
+        p(90): 2936.6707812
+        p(95): 3193.2949774
+      http_req_receiving:
+        avg: 0.07865253587245338
+        max: 4.445866
+        med: 0.072041
+        min: 0.044987
+        p(90): 0.0933268
+        p(95): 0.1015162
+      http_req_sending:
+        avg: 0.03965166696191318
+        max: 2.59105
+        med: 0.03711
+        min: 0.021093
+        p(90): 0.0447924
+        p(95): 0.053900000000000024
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 729.9955176612935
+        max: 3541.463106
+        med: 33.362625
+        min: 9.052388
+        p(90): 2936.5509464
+        p(95): 3193.189171
+      http_reqs:
+        count: 5645
+        rate: 85.07513500204388
+      iteration_duration:
+        avg: 1730.4496076384423
+        max: 4900.987883
+        med: 1269.422601
+        min: 513.346161
+        p(90): 3904.6833082000007
+        p(95): 4216.3628698
+      iterations:
+        count: 5645
+        rate: 85.07513500204388
+      login_counter:
+        count: 1837
+        rate: 27.68521222298576
+      login_duration_trend:
+        avg: 1926.061942419161
+        max: 3541.568472
+        med: 2417.066723
+        min: 17.387517
+        p(90): 3265.8860944000003
+        p(95): 3329.4768774
+      vus:
+        max: 150
+        min: 150
+        value: 150
+      vus_max:
+        max: 150
+        min: 150
+        value: 150
+    root_group:
+      checks:
+        is api key present:
+          fails: 25
+          id: 706b78755ca4cbfd382a7b7997f4e68a
+          name: is api key present
+          passes: 1812
+          path: ::is api key present
+        is_edit_book_200:
+          fails: 0
+          id: fd92247b619aedca8dd4d03a8934ebf1
+          name: is_edit_book_200
+          passes: 1918
+          path: ::is_edit_book_200
+        is_get_book_200:
+          fails: 0
+          id: d1a52362b30711900fd73a0a8229e6ae
+          name: is_get_book_200
+          passes: 1890
+          path: ::is_get_book_200
+        is_login_200:
+          fails: 0
+          id: 52213c9edc1a14125a332eb2ddab30ff
+          name: is_login_200
+          passes: 1837
+          path: ::is_login_200
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+- info:
+    auth:
+      start: 1607499669842469
+      end: 1607499729842654
+      cpuUsageMean: 86.74438338747179
+      cpuUsage70th: 97.38235516710478
+      cpuUsage75th: 97.94681057188193
+      cpuUsage80th: 98.4724048162408
+      cpuUsage85th: 99.1655468380805
+      cpuUsage90th: 99.7601041528475
+      cpuUsage95th: 100.13566253701838
+      cpuUsage99th: 100.48176282954745
+      numberOfCores: 1
+      replicaCount: 5
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login:
+          service_time:
+            count: 2659
+            responseTimesMean: 89.46972546069951
+            responseTimes95th: 290.5
+    books:
+      start: 1607499669842469
+      end: 1607499729842654
+      cpuUsageMean: 66.71080391457382
+      cpuUsage70th: 70.30141494674535
+      cpuUsage75th: 72.24968166886667
+      cpuUsage80th: 74.15776508017692
+      cpuUsage85th: 76.55009705169098
+      cpuUsage90th: 82.19681449294828
+      cpuUsage95th: 86.67872800014251
+      cpuUsage99th: 99.86359521565579
+      numberOfCores: 1
+      replicaCount: 1
+      responseTimes:
+        edit_book:
+          service_time:
+            count: 2723
+            responseTimesMean: 40.054719059860446
+            responseTimes95th: 82
+        get_book:
+          service_time:
+            count: 2653
+            responseTimesMean: 33.47342630983792
+            responseTimes95th: 73
+        login: {}
+    entry:
+      start: 1607499669842469
+      end: 1607499729842654
+      cpuUsageMean: 40.69605086730048
+      cpuUsage70th: 43.509280758373315
+      cpuUsage75th: 44.59380904934689
+      cpuUsage80th: 46.22190118621526
+      cpuUsage85th: 47.899284331505356
+      cpuUsage90th: 50.87705665064475
+      cpuUsage95th: 59.78479777562863
+      cpuUsage99th: 73.65574481513653
+      numberOfCores: 1
+      replicaCount: 3
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login: {}
+  specs:
+    auth:
+      replicaCount: 5
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=auth
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3007
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    books:
+      replicaCount: 1
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=books
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3009
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    entry:
+      replicaCount: 3
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=gateway
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+  requestsResponseTimes:
+    edit_book:
+      count: 2723
+      responseTimesMean: 53.053250091810504
+      responseTimesSTD: 132.3253278487587
+      responseTimes90th: 67
+      responseTimes95th: 108
+      responseTimes99th: 1017
+    get_book:
+      count: 2653
+      responseTimesMean: 45.871843196381455
+      responseTimesSTD: 127.63503440590935
+      responseTimes90th: 59
+      responseTimes95th: 98.5
+      responseTimes99th: 1005.5
+    login:
+      count: 2659
+      responseTimesMean: 226.9725460699511
+      responseTimesSTD: 143.17858229998407
+      responseTimes90th: 450.5
+      responseTimes95th: 537.5
+      responseTimes99th: 644.5
+  jaegerFile: /home/vahid/Desktop/jaegers/1ff605fc-248b-44b3-7649-7c84bdaf9381.zip
+  workload: 150_110_0.33_0.33_0.34
+  hash: v2_bookstore_nodejs_150_110_0.33_0.33_0.34_60_5.0_1.0_3.0_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 47
+        passes: 11344
+        value: 0
+      data_received:
+        count: 6.336015e+06
+        rate: 95692.69460142286
+      data_sent:
+        count: 2.553375e+06
+        rate: 38563.5662286008
+      edit_book_counter:
+        count: 2919
+        rate: 44.08559252804063
+      edit_book_duration_trend:
+        avg: 113.73987313120942
+        max: 1638.002285
+        med: 25.859424
+        min: 11.211014
+        p(90): 103.04259300000008
+        p(95): 1057.5906951
+      get_book_counter:
+        count: 2824
+        rate: 42.650809626305836
+      get_book_duration_trend:
+        avg: 102.55619584419313
+        max: 1652.159341
+        med: 20.1053675
+        min: 9.131951
+        p(90): 91.9579673
+        p(95): 982.7084940499992
+      http_req_blocked:
+        avg: 0.021404741566476027
+        max: 19.888016
+        med: 0.007246
+        min: 0.004416
+        p(90): 0.009125200000000002
+        p(95): 0.014176799999999996
+      http_req_connecting:
+        avg: 0.010874634177658455
+        max: 19.768145
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_duration:
+        avg: 148.57277951476584
+        max: 1652.159341
+        med: 38.313403
+        min: 9.131951
+        p(90): 380.1125688000002
+        p(95): 609.6997317999999
+      http_req_receiving:
+        avg: 0.07570169686004459
+        max: 1.666207
+        med: 0.071437
+        min: 0.04271
+        p(90): 0.09021940000000002
+        p(95): 0.09800479999999999
+      http_req_sending:
+        avg: 0.03817460067701657
+        max: 0.897868
+        med: 0.036456
+        min: 0.020611
+        p(90): 0.04269920000000001
+        p(95): 0.05070009999999999
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 148.4589032172294
+        max: 1651.982697
+        med: 38.212285
+        min: 9.008978
+        p(90): 379.9863022000002
+        p(95): 609.5808527
+      http_reqs:
+        count: 8567
+        rate: 129.38721178065228
+      iteration_duration:
+        avg: 1149.0055057715622
+        max: 3070.86131
+        med: 1124.299067
+        min: 512.141763
+        p(90): 1560.0542962000002
+        p(95): 1779.9080192999998
+      iterations:
+        count: 8567
+        rate: 129.38721178065228
+      login_counter:
+        count: 2824
+        rate: 42.650809626305836
+      login_duration_trend:
+        avg: 230.59405643378216
+        max: 904.124832
+        med: 172.45585
+        min: 12.101867
+        p(90): 467.24377850000013
+        p(95): 558.65660095
+      vus:
+        max: 150
+        min: 150
+        value: 150
+      vus_max:
+        max: 150
+        min: 150
+        value: 150
+    root_group:
+      checks:
+        is api key present:
+          fails: 47
+          id: 706b78755ca4cbfd382a7b7997f4e68a
+          name: is api key present
+          passes: 2777
+          path: ::is api key present
+        is_edit_book_200:
+          fails: 0
+          id: fd92247b619aedca8dd4d03a8934ebf1
+          name: is_edit_book_200
+          passes: 2919
+          path: ::is_edit_book_200
+        is_get_book_200:
+          fails: 0
+          id: d1a52362b30711900fd73a0a8229e6ae
+          name: is_get_book_200
+          passes: 2824
+          path: ::is_get_book_200
+        is_login_200:
+          fails: 0
+          id: 52213c9edc1a14125a332eb2ddab30ff
+          name: is_login_200
+          passes: 2824
+          path: ::is_login_200
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+- info:
+    auth:
+      start: 1607499887584830
+      end: 1607499947585037
+      cpuUsageMean: 67.15096521995618
+      cpuUsage70th: 72.73946557772447
+      cpuUsage75th: 73.61443643396427
+      cpuUsage80th: 74.90581705617456
+      cpuUsage85th: 76.69787044373983
+      cpuUsage90th: 78.86767766437674
+      cpuUsage95th: 81.5340162021092
+      cpuUsage99th: 85.20884547823428
+      numberOfCores: 1
+      replicaCount: 7
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login:
+          service_time:
+            count: 2742
+            responseTimesMean: 20.954048140043763
+            responseTimes95th: 64
+    books:
+      start: 1607499887584830
+      end: 1607499947585037
+      cpuUsageMean: 68.51433459293914
+      cpuUsage70th: 69.72769387818042
+      cpuUsage75th: 73.87821866849691
+      cpuUsage80th: 76.98924805740646
+      cpuUsage85th: 78.23486017401066
+      cpuUsage90th: 87.33591459127229
+      cpuUsage95th: 88.32348892794377
+      cpuUsage99th: 98.81415040738177
+      numberOfCores: 1
+      replicaCount: 1
+      responseTimes:
+        edit_book:
+          service_time:
+            count: 2818
+            responseTimesMean: 43.63662171753016
+            responseTimes95th: 103
+        get_book:
+          service_time:
+            count: 2742
+            responseTimesMean: 36.02407002188184
+            responseTimes95th: 89.5
+        login: {}
+    entry:
+      start: 1607499887584830
+      end: 1607499947585037
+      cpuUsageMean: 39.56038896786671
+      cpuUsage70th: 41.889593138432176
+      cpuUsage75th: 43.169450058689
+      cpuUsage80th: 45.731341429548785
+      cpuUsage85th: 47.207158557238316
+      cpuUsage90th: 49.73707517353729
+      cpuUsage95th: 55.777964470522065
+      cpuUsage99th: 67.31331306717325
+      numberOfCores: 1
+      replicaCount: 3
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login: {}
+  specs:
+    auth:
+      replicaCount: 7
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=auth
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3007
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    books:
+      replicaCount: 1
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=books
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3009
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    entry:
+      replicaCount: 3
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=gateway
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+  requestsResponseTimes:
+    edit_book:
+      count: 2818
+      responseTimesMean: 56.075230660042585
+      responseTimesSTD: 128.8000773244031
+      responseTimes90th: 74
+      responseTimes95th: 125
+      responseTimes99th: 820.5
+    get_book:
+      count: 2742
+      responseTimesMean: 48.17469000729395
+      responseTimesSTD: 119.77936397128217
+      responseTimes90th: 64
+      responseTimes95th: 107.5
+      responseTimes99th: 770.5
+    login:
+      count: 2742
+      responseTimesMean: 121.16338439095551
+      responseTimesSTD: 29.081946168065684
+      responseTimes90th: 158
+      responseTimes95th: 179
+      responseTimes99th: 213.5
+  jaegerFile: /home/vahid/Desktop/jaegers/e2dad8e6-6682-4d36-6eff-0029f40e6ca0.zip
+  workload: 150_110_0.33_0.33_0.34
+  hash: v2_bookstore_nodejs_150_110_0.33_0.33_0.34_60_7.0_1.0_3.0_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 48
+        passes: 11724
+        value: 0
+      data_received:
+        count: 6.54817e+06
+        rate: 98832.68563118373
+      data_sent:
+        count: 2.637858e+06
+        rate: 39813.65640380489
+      edit_book_counter:
+        count: 3012
+        rate: 45.460647649820544
+      edit_book_duration_trend:
+        avg: 110.29102839442241
+        max: 1478.417613
+        med: 28.318926
+        min: 11.323328
+        p(90): 123.51602840000005
+        p(95): 976.6861617
+      get_book_counter:
+        count: 2920
+        rate: 44.072075410848605
+      get_book_duration_trend:
+        avg: 100.05559875137001
+        max: 1465.144319
+        med: 21.825826
+        min: 8.591005
+        p(90): 104.31761809999999
+        p(95): 948.6546162499993
+      http_req_blocked:
+        avg: 0.03754734523271582
+        max: 35.856974
+        med: 0.007253
+        min: 0.004636
+        p(90): 0.008842700000000002
+        p(95): 0.013385849999999986
+      http_req_connecting:
+        avg: 0.026965735427022134
+        max: 35.760864
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_duration:
+        avg: 113.21360899367355
+        max: 1478.417613
+        med: 41.2604175
+        min: 8.591005
+        p(90): 159.28913660000006
+        p(95): 472.1009601999956
+      http_req_receiving:
+        avg: 0.07648524480343444
+        max: 2.772741
+        med: 0.071407
+        min: 0.042383
+        p(90): 0.0906539
+        p(95): 0.10037689999999996
+      http_req_sending:
+        avg: 0.03847166414369634
+        max: 0.530744
+        med: 0.036744
+        min: 0.021222
+        p(90): 0.04288140000000001
+        p(95): 0.05218849999999999
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 113.0986520847264
+        max: 1478.231132
+        med: 41.1481725
+        min: 8.49064
+        p(90): 159.18789770000006
+        p(95): 471.9715515999957
+      http_reqs:
+        count: 8852
+        rate: 133.60479847151774
+      iteration_duration:
+        avg: 1112.988042078516
+        max: 2942.056738
+        med: 1093.5874095
+        min: 511.493208
+        p(90): 1507.2762363
+        p(95): 1606.2083555999998
+      iterations:
+        count: 8852
+        rate: 133.60479847151774
+      login_counter:
+        count: 2920
+        rate: 44.072075410848605
+      login_duration_trend:
+        avg: 129.38628114178064
+        max: 713.932651
+        med: 116.1294735
+        min: 11.922453
+        p(90): 165.95101089999994
+        p(95): 194.13691444999984
+      vus:
+        max: 150
+        min: 150
+        value: 150
+      vus_max:
+        max: 150
+        min: 150
+        value: 150
+    root_group:
+      checks:
+        is api key present:
+          fails: 48
+          id: 706b78755ca4cbfd382a7b7997f4e68a
+          name: is api key present
+          passes: 2872
+          path: ::is api key present
+        is_edit_book_200:
+          fails: 0
+          id: fd92247b619aedca8dd4d03a8934ebf1
+          name: is_edit_book_200
+          passes: 3012
+          path: ::is_edit_book_200
+        is_get_book_200:
+          fails: 0
+          id: d1a52362b30711900fd73a0a8229e6ae
+          name: is_get_book_200
+          passes: 2920
+          path: ::is_get_book_200
+        is_login_200:
+          fails: 0
+          id: 52213c9edc1a14125a332eb2ddab30ff
+          name: is_login_200
+          passes: 2920
+          path: ::is_login_200
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+- info:
+    auth:
+      start: 1607500110101933
+      end: 1607500170102134
+      cpuUsageMean: 75.00534251997841
+      cpuUsage70th: 81.47337236237634
+      cpuUsage75th: 83.48815927785613
+      cpuUsage80th: 85.46887800552497
+      cpuUsage85th: 87.25749721583043
+      cpuUsage90th: 88.9536017137103
+      cpuUsage95th: 91.69014445411612
+      cpuUsage99th: 97.75323349817424
+      numberOfCores: 1
+      replicaCount: 6
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login:
+          service_time:
+            count: 2698
+            responseTimesMean: 31.794292068198665
+            responseTimes95th: 101.5
+    books:
+      start: 1607500110101933
+      end: 1607500170102134
+      cpuUsageMean: 75.15280511584133
+      cpuUsage70th: 76.36038314485077
+      cpuUsage75th: 78.61063310173581
+      cpuUsage80th: 80.30209625196244
+      cpuUsage85th: 85.52283313490423
+      cpuUsage90th: 94.21024700101049
+      cpuUsage95th: 98.94768394591804
+      cpuUsage99th: 100.20167644493608
+      numberOfCores: 1
+      replicaCount: 1
+      responseTimes:
+        edit_book:
+          service_time:
+            count: 2779
+            responseTimesMean: 61.58510255487585
+            responseTimes95th: 189
+        get_book:
+          service_time:
+            count: 2682
+            responseTimesMean: 51.81618195376585
+            responseTimes95th: 182.5
+        login: {}
+    entry:
+      start: 1607500110101933
+      end: 1607500170102134
+      cpuUsageMean: 40.53876184825571
+      cpuUsage70th: 42.686794520370405
+      cpuUsage75th: 43.79268103044497
+      cpuUsage80th: 45.910571255784475
+      cpuUsage85th: 47.676251274787575
+      cpuUsage90th: 50.33770848302166
+      cpuUsage95th: 56.8824074547305
+      cpuUsage99th: 63.465808006211816
+      numberOfCores: 1
+      replicaCount: 3
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login: {}
+  specs:
+    auth:
+      replicaCount: 6
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=auth
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3007
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    books:
+      replicaCount: 1
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=books
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3009
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    entry:
+      replicaCount: 3
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=gateway
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+  requestsResponseTimes:
+    edit_book:
+      count: 2779
+      responseTimesMean: 75.45519971212667
+      responseTimesSTD: 170.7523529003388
+      responseTimes90th: 110
+      responseTimes95th: 215.5
+      responseTimes99th: 1186
+    get_book:
+      count: 2682
+      responseTimesMean: 65.2662192393736
+      responseTimesSTD: 159.5173133972483
+      responseTimes90th: 97.5
+      responseTimes95th: 209
+      responseTimes99th: 991.5
+    login:
+      count: 2698
+      responseTimesMean: 133.99073387694588
+      responseTimesSTD: 49.09635904615454
+      responseTimes90th: 198
+      responseTimes95th: 230
+      responseTimes99th: 310.5
+  jaegerFile: /home/vahid/Desktop/jaegers/4b158685-5422-4851-6270-b625e1845f8e.zip
+  workload: 150_110_0.33_0.33_0.34
+  hash: v2_bookstore_nodejs_150_110_0.33_0.33_0.34_60_6.0_1.0_3.0_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 47
+        passes: 11512
+        value: 0
+      data_received:
+        count: 6.429568e+06
+        rate: 97074.83620974555
+      data_sent:
+        count: 2.591548e+06
+        rate: 39127.68285982723
+      edit_book_counter:
+        count: 2960
+        rate: 44.6906409856536
+      edit_book_duration_trend:
+        avg: 135.44804574966273
+        max: 1585.709145
+        med: 34.251896
+        min: 13.300628
+        p(90): 212.54831629999998
+        p(95): 1099.9257451999981
+      get_book_counter:
+        count: 2871
+        rate: 43.34690211817956
+      get_book_duration_trend:
+        avg: 122.66931776593529
+        max: 1543.968951
+        med: 25.82761
+        min: 9.58414
+        p(90): 196.285716
+        p(95): 1020.1972499999999
+      http_req_blocked:
+        avg: 0.025834228637147783
+        max: 19.79254
+        med: 0.007397
+        min: 0.004663
+        p(90): 0.008847
+        p(95): 0.013901199999999924
+      http_req_connecting:
+        avg: 0.015200401380103503
+        max: 19.702619
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_duration:
+        avg: 133.4036297920644
+        max: 1585.709145
+        med: 53.903203
+        min: 9.58414
+        p(90): 206.15800660000005
+        p(95): 572.7429242999965
+      http_req_receiving:
+        avg: 0.07629238309373175
+        max: 1.827218
+        med: 0.07201
+        min: 0.04332
+        p(90): 0.09099360000000001
+        p(95): 0.10008149999999999
+      http_req_sending:
+        avg: 0.03856549695227151
+        max: 0.836418
+        med: 0.036854
+        min: 0.019872
+        p(90): 0.042687800000000005
+        p(95): 0.051981099999999975
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 133.28877191201826
+        max: 1585.48258
+        med: 53.784802
+        min: 9.453193
+        p(90): 206.02625580000003
+        p(95): 572.5402189999965
+      http_reqs:
+        count: 8695
+        rate: 131.27875789535744
+      iteration_duration:
+        avg: 1133.0765057664153
+        max: 3061.559013
+        med: 1105.111575
+        min: 513.377697
+        p(90): 1522.2416676
+        p(95): 1675.4255376999988
+      iterations:
+        count: 8695
+        rate: 131.27875789535744
+      login_counter:
+        count: 2864
+        rate: 43.24121479152429
+      login_duration_trend:
+        avg: 142.0512340492315
+        max: 742.329097
+        med: 119.878548
+        min: 11.458916
+        p(90): 206.17529870000004
+        p(95): 248.17861229999994
+      vus:
+        max: 150
+        min: 150
+        value: 150
+      vus_max:
+        max: 150
+        min: 150
+        value: 150
+    root_group:
+      checks:
+        is api key present:
+          fails: 47
+          id: 706b78755ca4cbfd382a7b7997f4e68a
+          name: is api key present
+          passes: 2817
+          path: ::is api key present
+        is_edit_book_200:
+          fails: 0
+          id: fd92247b619aedca8dd4d03a8934ebf1
+          name: is_edit_book_200
+          passes: 2960
+          path: ::is_edit_book_200
+        is_get_book_200:
+          fails: 0
+          id: d1a52362b30711900fd73a0a8229e6ae
+          name: is_get_book_200
+          passes: 2871
+          path: ::is_get_book_200
+        is_login_200:
+          fails: 0
+          id: 52213c9edc1a14125a332eb2ddab30ff
+          name: is_login_200
+          passes: 2864
+          path: ::is_login_200
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+- info:
+    auth:
+      start: 1607500331601607
+      end: 1607500391601820
+      cpuUsageMean: 49.22694732231061
+      cpuUsage70th: 58.42409448122204
+      cpuUsage75th: 60.04223168378076
+      cpuUsage80th: 61.981115987178924
+      cpuUsage85th: 65.7175171944027
+      cpuUsage90th: 69.97505380618799
+      cpuUsage95th: 76.28166432191594
+      cpuUsage99th: 86.5867617662403
+      numberOfCores: 1
+      replicaCount: 6
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login:
+          service_time:
+            count: 1747
+            responseTimesMean: 17.275329135661135
+            responseTimes95th: 46.5
+    books:
+      start: 1607500331601607
+      end: 1607500391601820
+      cpuUsageMean: 98.10549567787236
+      cpuUsage70th: 101.60976238897939
+      cpuUsage75th: 101.80791633235783
+      cpuUsage80th: 102.16396564145893
+      cpuUsage85th: 102.36434952374842
+      cpuUsage90th: 102.52614623346301
+      cpuUsage95th: 102.82699515601011
+      cpuUsage99th: 104.10650480022399
+      numberOfCores: 0.5
+      replicaCount: 1
+      responseTimes:
+        edit_book:
+          service_time:
+            count: 1755
+            responseTimesMean: 908.3937321937321
+            responseTimes95th: 2549
+        get_book:
+          service_time:
+            count: 1729
+            responseTimesMean: 886.1937536148063
+            responseTimes95th: 2466
+        login: {}
+    entry:
+      start: 1607500331601607
+      end: 1607500391601820
+      cpuUsageMean: 30.72320564091816
+      cpuUsage70th: 34.318835220253305
+      cpuUsage75th: 34.77683989330564
+      cpuUsage80th: 35.936521719690674
+      cpuUsage85th: 36.9234395573475
+      cpuUsage90th: 39.462872915807736
+      cpuUsage95th: 40.66071567118318
+      cpuUsage99th: 41.728532830199725
+      numberOfCores: 1
+      replicaCount: 3
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login: {}
+  specs:
+    auth:
+      replicaCount: 6
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=auth
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3007
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    books:
+      replicaCount: 1
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=books
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3009
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 0.5
+      CPUReservation: 0.5
+    entry:
+      replicaCount: 3
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=gateway
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+  requestsResponseTimes:
+    edit_book:
+      count: 1755
+      responseTimesMean: 936.4991452991453
+      responseTimesSTD: 761.5913608992827
+      responseTimes90th: 1713.5
+      responseTimes95th: 2572
+      responseTimes99th: 3922
+    get_book:
+      count: 1729
+      responseTimesMean: 914.6257952573742
+      responseTimesSTD: 757.4732833246114
+      responseTimes90th: 1684.5
+      responseTimes95th: 2517.5
+      responseTimes99th: 3957.5
+    login:
+      count: 1747
+      responseTimesMean: 115.02060675443617
+      responseTimesSTD: 27.181082622340853
+      responseTimes90th: 148
+      responseTimes95th: 165
+      responseTimes99th: 203
+  jaegerFile: /home/vahid/Desktop/jaegers/01641fd2-f11f-4c78-54ac-de1790805153.zip
+  workload: 150_110_0.33_0.33_0.34
+  hash: v2_bookstore_nodejs_150_110_0.33_0.33_0.34_60_6.0_0.5_3.0_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 26
+        passes: 7456
+        value: 0
+      data_received:
+        count: 4.162469e+06
+        rate: 62786.974026601034
+      data_sent:
+        count: 1.673377e+06
+        rate: 25241.335908017947
+      edit_book_counter:
+        count: 1903
+        rate: 28.70498532784791
+      edit_book_duration_trend:
+        avg: 1088.8046170483437
+        max: 4875.545573
+        med: 716.246029
+        min: 11.543607
+        p(90): 2461.3867555999955
+        p(95): 3728.2376788999995
+      get_book_counter:
+        count: 1855
+        rate: 27.980949964875393
+      get_book_duration_trend:
+        avg: 1030.014195658759
+        max: 4792.931132
+        med: 691.740023
+        min: 11.041306
+        p(90): 2177.659895000001
+        p(95): 3615.8709478999995
+      http_req_blocked:
+        avg: 0.03370818843416367
+        max: 24.787964
+        med: 0.007343
+        min: 0.004737
+        p(90): 0.011520700000000004
+        p(95): 0.017958850000000023
+      http_req_connecting:
+        avg: 0.021405018861209973
+        max: 24.671751
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_duration:
+        avg: 750.4329818252681
+        max: 4875.545573
+        med: 550.0048285
+        min: 11.041306
+        p(90): 1645.0126791000002
+        p(95): 2927.1270080000063
+      http_req_receiving:
+        avg: 0.07896126174377247
+        max: 1.663257
+        med: 0.074241
+        min: 0.045553
+        p(90): 0.0953157
+        p(95): 0.10542925000000003
+      http_req_sending:
+        avg: 0.03912943291814937
+        max: 0.634934
+        med: 0.036888500000000005
+        min: 0.01984
+        p(90): 0.045307
+        p(95): 0.05480600000000001
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 750.314891130608
+        max: 4875.439616
+        med: 549.8578565
+        min: 10.943653
+        p(90): 1644.8501501
+        p(95): 2927.0174485000066
+      http_reqs:
+        count: 5620
+        rate: 84.7724737480322
+      iteration_duration:
+        avg: 1751.5067070756286
+        max: 6273.862629
+        med: 1512.0973525
+        min: 539.724944
+        p(90): 2760.329511800002
+        p(95): 4183.948731650003
+      iterations:
+        count: 5620
+        rate: 84.7724737480322
+      login_counter:
+        count: 1862
+        rate: 28.086538455308887
+      login_duration_trend:
+        avg: 126.08047189473696
+        max: 697.952385
+        med: 112.1851385
+        min: 11.619161
+        p(90): 153.9370317
+        p(95): 184.13586425
+      vus:
+        max: 150
+        min: 150
+        value: 150
+      vus_max:
+        max: 150
+        min: 150
+        value: 150
+    root_group:
+      checks:
+        is api key present:
+          fails: 26
+          id: 706b78755ca4cbfd382a7b7997f4e68a
+          name: is api key present
+          passes: 1836
+          path: ::is api key present
+        is_edit_book_200:
+          fails: 0
+          id: fd92247b619aedca8dd4d03a8934ebf1
+          name: is_edit_book_200
+          passes: 1903
+          path: ::is_edit_book_200
+        is_get_book_200:
+          fails: 0
+          id: d1a52362b30711900fd73a0a8229e6ae
+          name: is_get_book_200
+          passes: 1855
+          path: ::is_get_book_200
+        is_login_200:
+          fails: 0
+          id: 52213c9edc1a14125a332eb2ddab30ff
+          name: is_login_200
+          passes: 1862
+          path: ::is_login_200
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+- info:
+    auth:
+      start: 1607500554202229
+      end: 1607500614202381
+      cpuUsageMean: 77.87664214921622
+      cpuUsage70th: 83.40635549862763
+      cpuUsage75th: 84.49701100455398
+      cpuUsage80th: 85.97347164605138
+      cpuUsage85th: 87.92680060753342
+      cpuUsage90th: 89.0955083724611
+      cpuUsage95th: 91.66197062171871
+      cpuUsage99th: 96.26284873208874
+      numberOfCores: 1
+      replicaCount: 6
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login:
+          service_time:
+            count: 2785
+            responseTimesMean: 32.76804308797127
+            responseTimes95th: 99
+    books:
+      start: 1607500554202229
+      end: 1607500614202381
+      cpuUsageMean: 42.91271900780081
+      cpuUsage70th: 45.58935162311716
+      cpuUsage75th: 47.18395765488734
+      cpuUsage80th: 48.619563757291616
+      cpuUsage85th: 53.25356155170131
+      cpuUsage90th: 62.42790659278403
+      cpuUsage95th: 70.42243817221521
+      cpuUsage99th: 77.43617098744284
+      numberOfCores: 0.83
+      replicaCount: 3
+      responseTimes:
+        edit_book:
+          service_time:
+            count: 2871
+            responseTimesMean: 16.66388018112156
+            responseTimes95th: 38
+        get_book:
+          service_time:
+            count: 2779
+            responseTimesMean: 11.652392947103275
+            responseTimes95th: 33
+        login: {}
+    entry:
+      start: 1607500554202229
+      end: 1607500614202381
+      cpuUsageMean: 52.31125242246924
+      cpuUsage70th: 54.948131632653066
+      cpuUsage75th: 55.69044067706606
+      cpuUsage80th: 56.27332432055749
+      cpuUsage85th: 59.15170179466451
+      cpuUsage90th: 62.928923832752616
+      cpuUsage95th: 72.05132643076065
+      cpuUsage99th: 85.62324695216812
+      numberOfCores: 1
+      replicaCount: 2
+      responseTimes:
+        edit_book: {}
+        get_book: {}
+        login: {}
+  specs:
+    auth:
+      replicaCount: 6
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=auth
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3007
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+    books:
+      replicaCount: 3
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=books
+      - MONGODB_URL=mongodb://db:27017/bookstoreDB
+      - PORT=3009
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 0.83
+      CPUReservation: 0.83
+    entry:
+      replicaCount: 2
+      envs:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - JAEGER_COLLECTOR_HOST=jaeger
+      - JAEGER_COLLECTOR_PORT=14268
+      - JAEGER_SERVICE_NAME=gateway
+      - JWT_KEY=someKeyIsGoodAndSomeOfThemBNoGEo1ioD!
+      - SAMPELLING_PROB=1
+      - WorkerCount=1
+      CPULimits: 1
+      CPUReservation: 1
+  requestsResponseTimes:
+    edit_book:
+      count: 2871
+      responseTimesMean: 29.311389759665623
+      responseTimesSTD: 25.410825887671844
+      responseTimes90th: 45
+      responseTimes95th: 66
+      responseTimes99th: 152.5
+    get_book:
+      count: 2779
+      responseTimesMean: 24.261245052177042
+      responseTimesSTD: 25.736816278627256
+      responseTimes90th: 41
+      responseTimes95th: 58
+      responseTimes99th: 142.5
+    login:
+      count: 2785
+      responseTimesMean: 134.24847396768402
+      responseTimesSTD: 45.02064180877582
+      responseTimes90th: 196
+      responseTimes95th: 221.5
+      responseTimes99th: 284
+  jaegerFile: /home/vahid/Desktop/jaegers/6a1fedd9-c31c-408f-6a5f-c2d360989364.zip
+  workload: 150_110_0.33_0.33_0.34
+  hash: v2_bookstore_nodejs_150_110_0.33_0.33_0.34_60_6.0_2.5_2.0_
+  loadGeneratorFeedback:
+    metrics:
+      checks:
+        fails: 49
+        passes: 11986
+        value: 0
+      data_received:
+        count: 6.694453e+06
+        rate: 101147.42762799951
+      data_sent:
+        count: 2.696058e+06
+        rate: 40735.1177812271
+      edit_book_counter:
+        count: 3079
+        rate: 46.52104207268472
+      edit_book_duration_trend:
+        avg: 55.39135997661561
+        max: 855.850481
+        med: 23.606642
+        min: 13.413162
+        p(90): 66.65806620000002
+        p(95): 303.0060260999997
+      get_book_counter:
+        count: 2982
+        rate: 45.055455492285105
+      get_book_duration_trend:
+        avg: 48.52253438564709
+        max: 873.910993
+        med: 18.04074
+        min: 9.752517
+        p(90): 61.216135500000085
+        p(95): 278.2508684499999
+      http_req_blocked:
+        avg: 0.02222691589301497
+        max: 25.342847
+        med: 0.00721
+        min: 0.004537
+        p(90): 0.0086746
+        p(95): 0.012123499999999997
+      http_req_connecting:
+        avg: 0.012032503426171534
+        max: 25.132939
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_duration:
+        avg: 87.82381378713558
+        max: 933.461315
+        med: 31.595327500000003
+        min: 9.752517
+        p(90): 184.17801340000003
+        p(95): 314.1209192499996
+      http_req_receiving:
+        avg: 0.07571483510167942
+        max: 1.544582
+        med: 0.07192899999999999
+        min: 0.043838
+        p(90): 0.0897433
+        p(95): 0.09767494999999998
+      http_req_sending:
+        avg: 0.03796887853669322
+        max: 0.380653
+        med: 0.036642
+        min: 0.020579
+        p(90): 0.0420051
+        p(95): 0.04961065
+      http_req_tls_handshaking:
+        avg: 0
+        max: 0
+        med: 0
+        min: 0
+        p(90): 0
+        p(95): 0
+      http_req_waiting:
+        avg: 87.71013007349683
+        max: 933.299527
+        med: 31.479029500000003
+        min: 9.650579
+        p(90): 184.04026970000004
+        p(95): 314.00894349999965
+      http_reqs:
+        count: 9048
+        rate: 136.70749875727554
+      iteration_duration:
+        avg: 1087.650426314991
+        max: 2411.345847
+        med: 1084.7148364999998
+        min: 512.472801
+        p(90): 1485.7942166
+        p(95): 1554.37778705
+      iterations:
+        count: 9048
+        rate: 136.70749875727554
+      login_counter:
+        count: 2987
+        rate: 45.13100119230571
+      login_duration_trend:
+        avg: 160.49068370940728
+        max: 933.461315
+        med: 124.209181
+        min: 12.452276
+        p(90): 225.0914936
+        p(95): 407.140551399999
+      vus:
+        max: 150
+        min: 150
+        value: 150
+      vus_max:
+        max: 150
+        min: 150
+        value: 150
+    root_group:
+      checks:
+        is api key present:
+          fails: 49
+          id: 706b78755ca4cbfd382a7b7997f4e68a
+          name: is api key present
+          passes: 2938
+          path: ::is api key present
+        is_edit_book_200:
+          fails: 0
+          id: fd92247b619aedca8dd4d03a8934ebf1
+          name: is_edit_book_200
+          passes: 3079
+          path: ::is_edit_book_200
+        is_get_book_200:
+          fails: 0
+          id: d1a52362b30711900fd73a0a8229e6ae
+          name: is_get_book_200
+          passes: 2982
+          path: ::is_get_book_200
+        is_login_200:
+          fails: 0
+          id: 52213c9edc1a14125a332eb2ddab30ff
+          name: is_login_200
+          passes: 2987
+          path: ::is_login_200
+      groups: {}
+      id: d41d8cd98f00b204e9800998ecf8427e
+      name: ""
+      path: ""
+command: /tmp/go-build482332915/b001/exe/main autoconfig --appname bookstore_nodejs
+  --config configurations/bookstore_nodejs.yaml --workload 150_110_0.33_0.33_0.34
+  --testName bnv2-250-2.0-mc-c-1.0 bnv2 --property ResponseTimes95Percentile --value
+  250 --demands /home/vahid/Dropbox/data/swarm-manager-data/demands/bookstore_nodejs_demands.yaml
+  --mc --stepsize 2.0 --constantinit 1.0
+config:
+  version: v2
+  appname: bookstore_nodejs
+  jaeger:
+    host: http://136.159.209.204:16686
+    rootservice: wrapper
+    detailsfilepath: /home/vahid/Desktop/projects/swarmmanager/configurations/formulas/bookstore_nodejs.yaml
+    storepath: /home/vahid/Desktop/jaegers
+  cache:
+    type: dropbox
+    details:
+      path: /home/vahid/Dropbox/data/swarm-manager-data/cache-v2
+  results:
+    path: /home/vahid/Dropbox/data/swarm-manager-data/results/bookstore_nodejs/150_110_0.33_0.33_0.34/bnv2/
+  testbed:
+    dockercomposefile: /home/vahid/Desktop/projects/swarmmanager/bookstore-compose-file/docker-compose-db.yml
+    servicecount: 5
+    stackname: bookstore
+    servicestoconfigure:
+    - auth
+    - books
+    - entry
+  host:
+    availablecpucount: 24
+    host: tcp://136.159.209.204:2375
+  log:
+    directory: /home/vahid/Desktop/projects/swarm-manager-data/logs
+  loadgenerator:
+    type: k6
+    details:
+      host: http://136.159.209.214:7112
+      script: /home/vahid/Desktop/projects/swarmmanager/workload-scripts/bookstore/type8-remote.js
+    args:
+      ARG_BASE_URL: http://localhost:3000
+      ARG_SLEEP_DURATION: "1"
+      REQUEST_NAMES: login,get_book,edit_book
+  test:
+    duration: 60
+    waitafterloadgeneratordone: 15
+  usagecollector:
+    type: MultiHostCollector
+    details:
+      hosts:
+      - tcp://136.159.209.204:2375
+  continuesruns: false
